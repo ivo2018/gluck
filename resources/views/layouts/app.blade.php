@@ -8,18 +8,20 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
+
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+      
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
       
-      
         <!-- Styles -->
-    
+
         @livewireStyles
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     
+        <script src="{{mix('js/app.js')}}" defer> </script>
     </head>
     <body class="font-sans antialiased">
         <x-banner />
@@ -45,12 +47,7 @@
 
         @stack('modals')
  
+        <script src="{{ mix('js/app.js') }}"></script>
         @livewireScripts
-
-        <script src="{{ asset('js/app.js') }}" defer></script>
-  
-        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
-    
-      
     </body>
 </html>

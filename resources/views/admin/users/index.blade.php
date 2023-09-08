@@ -28,5 +28,5 @@ $(document).ready(function() {
     },3000);
 });
 </script>
-    @livewireScripts
+
 @stop
