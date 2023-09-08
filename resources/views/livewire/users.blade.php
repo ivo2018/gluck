@@ -1,10 +1,28 @@
 <div>
-        <div class="card">
+    <style>
+        .content{
+        display: flex;
+        justify-content: space-around;
+        margin: auto;
+        }
+        
+            #button{
+                background-color: rgba(82, 73, 73, 0.466);
+                border-radius:5px;
+                color: rgb(37, 36, 33);
+                padding: 4px;
+                
+            }
+        </style>
+        <div class="container">
+        <div class="content">
        
             @if($users->count())
             <div class="card-body">
-                <div>  cantidad de usuarios
-                    {{$users->count()}}</div>
+                <label > Hay
+                    {{$users->count()}}
+                    Usuarios  {{$search}}
+                </label>
                     <div class="card-header">
                         <input wire:model="search" type="form-control" placeholder="Ingrese el nombre de un codigo">
                      </div>
@@ -44,4 +62,5 @@
             </div>
             @endif
         </div>
+    </div>
 </div>
