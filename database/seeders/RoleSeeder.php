@@ -19,6 +19,7 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'admin.codigosiva.index'])->assignRole($role1);
         Permission::create(['name' => 'admin.codigosiva.create'])->assignRole($role1);
         Permission::create(['name' => 'admin.codigosiva.edit'])->assignRole($role1);
+        Permission::create(['name' => 'admin.codigosiva.show'])->assignRole($role1);
         Permission::create(['name' => 'admin.codigosiva.destroy'])->assignRole($role1);
  
         Permission::create(['name' => 'admin.users.index'])->syncRoles([$role1,$role2]);
