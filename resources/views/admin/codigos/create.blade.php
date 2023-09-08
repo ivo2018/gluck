@@ -7,6 +7,11 @@
 
 @section('content')
 
+@if (session('info'))
+<div class="alert alert-info">
+    <strong>{{session('info')}}</strong>
+</div>
+@endif
     
 <style>
     .container{
@@ -39,11 +44,28 @@
 </style>
     <div class="container">
         <h1>En esta pagina podras crear un codigo
+    <div>
+        {!! Form::open(['route'=>'admin.codigosiva.store'])!!}
+        <div class="form-group">
+            {!! Form::label('nombre', 'Nombre') !!}
+            {!! Form::text('nombre', null, ['class'=>'form-control','placeholder'=>'Ingrese el nombre de el codigo']) !!}
+        </div>
+        <div class="form-group">
+            {!! Form::label('porcentajeIva', 'PorcentajeIva') !!}
+            {!! Form::text('porcentajeIva', null, ['class'=>'form-control','placeholder'=>'Ingrese el porcentaje de iva']) !!}
+        </div>
+        <div class="form-group">
+            {!! Form::label('formulario', 'Formulario') !!}
+            {!! Form::text('formulario', null, ['class'=>'form-control','placeholder'=>'Ingrese el formulario']) !!}
+        </div>
+        {!! Form::submit('Crear codigo', ['class'=> 'btn btn-info']) !!}
+        {!! Form::close() !!}
+    </div>
     
-    <form action="{{route('admin.codigosiva.store')}}" method="POST" >
+    {{--<form action="{{route('admin.codigosiva.store')}}" method="POST" >
         @csrf
         <label>
-          {{--    Nombre: <br>--}}
+          {{--    Nombre: <br>--}}{{--
           Nombre :  <br>
       <input type="text" name="nombre" value="{{old('nombre')}}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
         </label>
@@ -63,6 +85,7 @@
         <button  class="btn btn-info " type="submit">Enviar Formulario</button>
     </form>
     </div>
+    --}}
   
 @stop
 
@@ -71,5 +94,13 @@
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    setTimeout(function() {
+        $(".alert").fadeOut(1500);
+    },3000);
+});
+</script>
+    @livewireScripts
 @stop

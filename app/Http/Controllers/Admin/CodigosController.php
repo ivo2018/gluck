@@ -31,8 +31,13 @@ class CodigosController extends Controller
      */
     public function store(StoreCodigoivaRequest $request)
     {
+        $request->validate([
+            'nombre' =>'required',
+            'porcentajeIva' => 'required',
+            'formulario'=>'required'
+        ]);
         $codigosiva=Codigoiva::create($request->all());
-        return redirect()->route('admin.codigosiva.show',$codigosiva);
+        return redirect()->route('admin.codigosiva.show',$codigosiva)->with('info','El codigo se creo correctamente');
                             
     }   
 
@@ -64,7 +69,7 @@ class CodigosController extends Controller
     {
 
          $codigo->update($request->all());
-       return redirect()->route('admin.codigosiva.show',$codigo);
+       return redirect()->route('admin.codigosiva.show',$codigo)->with('info','El codigo se actualizo con exito');
    
     }
 
@@ -74,6 +79,6 @@ class CodigosController extends Controller
     public function destroy(Codigoiva $codigo)
     {
         $codigo->delete();
-        return redirect()->route('admin.codigosiva.index');
+        return redirect()->route('admin.codigosiva.index')->with('info','El codigo se Elimino correctamente');;
     }
 }

@@ -6,7 +6,11 @@
 @stop
 
 @section('content')
-
+@if (session('info'))
+<div class="alert alert-success">
+    <strong>{{session('info')}}</strong>
+</div>
+@endif
     
     <style>
         .container{
@@ -37,7 +41,29 @@
             
         }
     </style>
-    <div class="container">
+
+<div class="container">
+    <h1>En esta pagina podras editar un codigo
+<div>
+    {!! Form::model($codigo,['route'=>['admin.codigosiva.update',$codigo],'method'=>'put'])!!}
+    <div class="form-group">
+        {!! Form::label('nombre', 'Nombre') !!}
+        {!! Form::text('nombre', null, ['class'=>'form-control','placeholder'=>'Ingrese el nombre de el codigo']) !!}
+    </div>
+    <div class="form-group">
+        {!! Form::label('porcentajeIva', 'PorcentajeIva') !!}
+        {!! Form::text('porcentajeIva', null, ['class'=>'form-control','placeholder'=>'Ingrese el porcentaje de iva']) !!}
+    </div>
+    <div class="form-group">
+        {!! Form::label('formulario', 'Formulario') !!}
+        {!! Form::text('formulario', null, ['class'=>'form-control','placeholder'=>'Ingrese el formulario']) !!}
+    </div>
+    {!! Form::submit('Editar codigo', ['class'=> 'btn btn-info']) !!}
+    {!! Form::close() !!}
+</div>
+
+  {{--  <div class="container">
+        
     <h1>En esta pagina podras editar un codigo
      
         <form action="{{route('admin.codigosiva.update',$codigo)}}"  method="POST">
@@ -66,7 +92,7 @@
         <button class="btn btn-info btn-small" type="submit">Enviar Formulario</button>
     </form>
     </div>
-
+--}}
 @stop
 
 @section('css')
@@ -75,4 +101,5 @@
 
 @section('js')
     <script> console.log('Hi!'); </script>
+    
 @stop

@@ -16,6 +16,7 @@
         </style>
         
         <div class="container">
+            
             <div class="card-header">
                 <input wire:model="search" type="form-control" placeholder="Ingrese el nombre de un codigo">
              </div>
@@ -71,4 +72,6 @@
         </div>
         
         </div>
+
+
 </div>

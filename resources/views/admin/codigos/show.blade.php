@@ -7,7 +7,11 @@
 
 @section('content')
 
-    
+@if (session('info'))
+<div class="alert alert-info">
+    <strong>{{session('info')}}</strong>
+</div>
+@endif
     <style>
         .container{
             display: flex;
@@ -50,4 +54,16 @@
     </div>
 
 @stop
+@section('js')
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    setTimeout(function() {
+        $(".alert").fadeOut(1500);
+    },3000);
+});
+</script>
+    @livewireScripts
+@stop
+
 
