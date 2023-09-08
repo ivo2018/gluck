@@ -16,10 +16,7 @@
         </style>
         
         <div class="container">
-            
-            <div class="card-header">
-                <input wire:model="search" type="form-control" placeholder="Ingrese el nombre de un codigo">
-             </div>
+
             <div class="content">
                 {{--Buscar codigos: {{$search}} --}}
                 <a  class="btn btn-info " href="{{route('admin.codigosiva.create')}}"> Crear codigo </a>
