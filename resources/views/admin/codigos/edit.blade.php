@@ -6,6 +6,7 @@
 @stop
 
 @section('content')
+@can('admin.codigosiva.edit')
 @if (session('info'))
 <div class="alert alert-success">
     <strong>{{session('info')}}</strong>
@@ -62,6 +63,7 @@
     {!! Form::close() !!}
 </div>
 
+
   {{--  <div class="container">
         
     <h1>En esta pagina podras editar un codigo
@@ -93,6 +95,7 @@
     </form>
     </div>
 --}}
+@endcan
 @stop
 
 @section('css')

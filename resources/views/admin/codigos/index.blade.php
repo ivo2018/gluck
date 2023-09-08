@@ -11,6 +11,10 @@
     <strong>{{session('info')}}</strong>
 </div>
 @endif
+@can('admin.codigosiva.index')
+
+
+
 {{--
     <style>
         .content {
@@ -80,6 +84,7 @@
 @stop
 --}}
 @livewire('codigos')
+@endcan
 @stop
 @section('css')
     <link rel="stylesheet" href="/css/admin_custom.css">

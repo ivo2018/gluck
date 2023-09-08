@@ -321,14 +321,16 @@ return [
         ],*/
         ['header' => 'ADMINISTRADOR'],
         [
-            'text' => 'Codigos',
-            'route'  => 'admin.codigosiva.index',
+            'text' => 'Usuarios',
+           'route'  => 'admin.users.index',
             'icon' => 'fas fa-fw fa-user',
+            'can' =>  'admin.users.index'
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'text' => 'Codigos',
+            'route'  => 'admin.codigosiva.index',
+            'icon' => 'fas fa-fw fa-code',
+            'can' =>  'admin.codigosiva.index'
         ],
         [
             'text'    => 'multilevel',

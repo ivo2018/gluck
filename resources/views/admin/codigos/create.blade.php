@@ -6,7 +6,7 @@
 @stop
 
 @section('content')
-
+@can('admin.codigosiva.create')
 @if (session('info'))
 <div class="alert alert-info">
     <strong>{{session('info')}}</strong>
@@ -86,7 +86,7 @@
     </form>
     </div>
     --}}
-  
+    @endcan
 @stop
 
 @section('css')

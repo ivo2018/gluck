@@ -6,7 +6,7 @@
 @stop
 
 @section('content')
-
+@can('admin.codigosiva.show')
 @if (session('info'))
 <div class="alert alert-info">
     <strong>{{session('info')}}</strong>
@@ -52,7 +52,7 @@
         @endforeach
       
     </div>
-
+    @endcan
 @stop
 @section('js')
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
